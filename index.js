@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
@@ -20,6 +21,8 @@ app.engine(".hbs", engine({ defaultLayout: "main", extname: ".hbs" }));
 app.set("view engine", ".hbs");
 app.set("views", "./views");
 
+// static
+app.use(express.static(path.join(__dirname, "public")));
 // Routes
 app.use("/", require("./routes/homeRoute"));
 

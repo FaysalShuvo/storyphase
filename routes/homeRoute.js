@@ -4,12 +4,14 @@ const router = express.Router();
 // login/landing page
 // GET /
 router.get("/", (req, res) => {
-  res.send("Login");
+  res.render("login", {
+    layout: "login",
+  });
 });
 
 // Dashboard page
 // GET /dashboard
 router.get("/dashboard", (req, res) => {
-  res.send("dashboard");
+  res.render("dashboard");
 });
 module.exports = router;
